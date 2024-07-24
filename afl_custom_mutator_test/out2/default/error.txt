@@ -1,0 +1,2 @@
+File instrumentation/afl-compiler-rt.o.c, line 959: Error(read from AFL++ tool): Success
+File instrumentation/afl-compiler-rt.o.c, line 959: Error(read from AFL++ tool): Success

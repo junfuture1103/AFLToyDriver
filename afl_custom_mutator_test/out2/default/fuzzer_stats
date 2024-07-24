@@ -1,0 +1,50 @@
+start_time        : 1721826810
+last_update       : 1721827023
+run_time          : 212
+fuzzer_pid        : 3548120
+cycles_done       : 58
+cycles_wo_finds   : 58
+time_wo_finds     : 0
+fuzz_time         : 212
+calibration_time  : 0
+cmplog_time       : 0
+sync_time         : 0
+trim_time         : 0
+execs_done        : 545994
+execs_per_sec     : 2572.19
+execs_ps_last_min : 2533.61
+corpus_count      : 3
+corpus_favored    : 1
+corpus_found      : 0
+corpus_imported   : 0
+corpus_variable   : 0
+max_depth         : 1
+cur_item          : 0
+pending_favs      : 0
+pending_total     : 0
+stability         : 100.00%
+bitmap_cvg        : 0.02%
+saved_crashes     : 1
+saved_hangs       : 0
+last_find         : 0
+last_crash        : 1721826810
+last_hang         : 0
+execs_since_crash : 545962
+exec_timeout      : 20
+slowest_exec_ms   : 0
+peak_rss_mb       : 2
+cpu_affinity      : 1
+edges_found       : 11
+total_edges       : 65536
+var_byte_count    : 0
+havoc_expansion   : 5
+auto_dict_entries : 0
+testcache_size    : 32
+testcache_count   : 3
+testcache_evict   : 0
+afl_banner        : ./afl_file_input
+afl_version       : ++4.22a
+target_mode       : shmem_testcase default
+command_line      : afl-fuzz -i in -o out2 -- ./afl_file_input @@
+virgin_bytes     : 1794[fe] 8142[fe] 8514[fe] 8773[fe] 9810[fe] 11731[fe] 34495[fe] 38194[fe] 41778[fe] 42478[fe] 48298[fe]
+var_bytes        :

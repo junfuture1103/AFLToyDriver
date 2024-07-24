@@ -1,0 +1,7 @@
+# environment variables:
+AFL_CUSTOM_MUTATOR_LIBRARY=/home/jun20/jun/etc/AFLToyDriver/afl_custom_mutator_test/custom_send.so
+AFL_CUSTOM_INFO_PROGRAM=./afl_file_input
+AFL_CUSTOM_INFO_PROGRAM_ARGV=./foo
+AFL_CUSTOM_INFO_OUT=out/default
+# command line:
+'afl-fuzz' '-i' 'in' '-o' 'out' '--' './afl_file_input' './foo'

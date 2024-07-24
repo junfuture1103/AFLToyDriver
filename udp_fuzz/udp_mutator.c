@@ -68,7 +68,8 @@ void afl_custom_fuzz_send(my_mutator_t *data, uint8_t *buf, size_t buf_size) {
 
     // 메시지 전송
     sendto(sockfd, buf, buf_size, 0, (const struct sockaddr *)&server_addr, sizeof(server_addr));
-    printf("============ Message sent: %s ============ \n", buf);
+    printf("============ Message sent by driver : %s ============ \n", buf);
+    printf("addr : %s port : %d\n", SERVER_IP, PORT);
 
     close(sockfd);
     return;
