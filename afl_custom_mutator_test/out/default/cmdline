@@ -1,2 +1,2 @@
-./afl_file_input
-./foo
+./target
+@@

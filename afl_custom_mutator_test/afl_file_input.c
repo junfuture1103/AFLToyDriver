@@ -7,6 +7,11 @@
 void process_input(const char *input) {
     printf("process input : %s\n", input);
 
+    if(strncmp(input, "FFF", 3) == 0){
+        printf("finish detected");
+        exit(0);
+    }
+
     if (strncmp(input, "FUZZ", 3) == 0) {
         printf("Detected FUZZ prefix\n");
 
@@ -29,27 +34,32 @@ void process_input(const char *input) {
 }
 
 int main(int argc, char *argv[]) {
-    printf("argc : %d argv[1] : %s\n", argc, argv[1]);
 
-    if (argc != 2) {
-        fprintf(stderr, "Usage: %s <input_file>\n", argv[0]);
-        return 1;
+    while(1){
+        printf("argc : %d argv[1] : %s\n", argc, argv[1]);
+
+        if (argc != 2) {
+            fprintf(stderr, "Usage: %s <input_file>\n", argv[0]);
+            return 1;
+        }
+
+
+        FILE *file = fopen(argv[1], "r");
+        if (file == NULL) {
+            perror("fopen");
+            return 1;
+        }
+
+        char buffer[BUF_SIZE];
+        if (fgets(buffer, BUF_SIZE, file) != NULL) {
+            process_input(buffer);
+        } else {
+            perror("fgets");
+        }
+
+        fclose(file);
+
     }
 
-
-    FILE *file = fopen(argv[1], "r");
-    if (file == NULL) {
-        perror("fopen");
-        return 1;
-    }
-
-    char buffer[BUF_SIZE];
-    if (fgets(buffer, BUF_SIZE, file) != NULL) {
-        process_input(buffer);
-    } else {
-        perror("fgets");
-    }
-
-    fclose(file);
     return 0;
 }

@@ -1,0 +1,50 @@
+start_time        : 1723114895
+last_update       : 1723114938
+run_time          : 43
+fuzzer_pid        : 45632
+cycles_done       : 0
+cycles_wo_finds   : 0
+time_wo_finds     : 0
+fuzz_time         : 3
+calibration_time  : 35
+cmplog_time       : 0
+sync_time         : 0
+trim_time         : 5
+execs_done        : 15
+execs_per_sec     : 0.35
+execs_ps_last_min : 0.00
+corpus_count      : 1
+corpus_favored    : 1
+corpus_found      : 0
+corpus_imported   : 0
+corpus_variable   : 0
+max_depth         : 1
+cur_item          : 0
+pending_favs      : 1
+pending_total     : 1
+stability         : 100.00%
+bitmap_cvg        : 0.00%
+saved_crashes     : 0
+saved_hangs       : 0
+last_find         : 0
+last_crash        : 0
+last_hang         : 0
+execs_since_crash : 15
+exec_timeout      : 50000
+slowest_exec_ms   : 0
+peak_rss_mb       : 0
+cpu_affinity      : 0
+edges_found       : 12
+total_edges       : 8388608
+var_byte_count    : 0
+havoc_expansion   : 0
+auto_dict_entries : 0
+testcache_size    : 5
+testcache_count   : 1
+testcache_evict   : 0
+afl_banner        : ./deferred_initialization_example
+afl_version       : ++4.22a
+target_mode       : no_fsrv persistent shmem_testcase deferred 
+command_line      : afl-fuzz -i input_dir -o output_dir -t 50000 -- ./deferred_initialization_example @@
+virgin_bytes     : 0[fe] 1089[fe] 6730[fe] 10249[fe] 11527[fe] 16761[fe] 24814[fe] 34042[fe] 37612[fe] 45382[fe] 50736[fe] 50828[fe]
+var_bytes        :

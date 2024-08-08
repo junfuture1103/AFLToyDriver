@@ -61,6 +61,7 @@ void afl_custom_fuzz_send(my_mutator_t *data, uint8_t *buf, size_t buf_size) {
     memset(&server_addr, 0, sizeof(server_addr));
     server_addr.sin_family = AF_INET;
     server_addr.sin_port = htons(PORT);
+    
     if (inet_pton(AF_INET, SERVER_IP, &server_addr.sin_addr) <= 0) {
         perror("Invalid address/ Address not supported");
         return;

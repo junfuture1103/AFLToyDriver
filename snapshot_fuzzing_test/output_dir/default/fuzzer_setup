@@ -1,0 +1,13 @@
+# environment variables:
+AFL_CUSTOM_INFO_PROGRAM=./deferred_initialization_example
+AFL_CUSTOM_INFO_PROGRAM_ARGV=@@
+AFL_CUSTOM_INFO_OUT=output_dir/default
+AFL_DEBUG=0
+AFL_NO_FORKSRV=1
+AFL_QEMU_PERSISTENT_ADDR=0x40159f
+AFL_QEMU_PERSISTENT_GPR=1
+AFL_QEMU_PERSISTENT_MEM=1
+AFL_QEMU_PERSISTENT_EXITS=1
+AFL_QEMU_SNAPSHOT=0x0000000000402416
+# command line:
+'afl-fuzz' '-i' 'input_dir' '-o' 'output_dir' '-t' '50000' '--' './deferred_initialization_example' '@@'

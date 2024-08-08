@@ -5,14 +5,27 @@
 #include <unistd.h>
 
 void process_input(const char *input) {
+    printf("process input : %s\n", input);
 
-    printf("we got an input!! %s\n", input);
+    if (strncmp(input, "FUZZ", 3) == 0) {
+        printf("Detected FUZZ prefix\n");
 
-    if (strcmp(input, "fuzzing") == 0) {
-        printf("Fuzzing is fun!\n");
+        if (strstr(input, "FUZZ_C") != NULL) {
+            printf("CRASH found in input, triggering error...\n");
+            abort(); // This will cause a crash for testing
+        }
+
+        if (strcmp(input, "FUZZ_AFL") == 0) {
+            printf("Exact match for FUZZ_AFL\n");
+        } else if (strcmp(input, "FUZZ_TEST") == 0) {
+            printf("Exact match for FUZZ_TEST\n");
+        } else {
+            printf("FUZZ prefix but not an exact match\n");
+        }
     } else {
-        printf("Try again.\n");
+        printf("No FUZZ prefix\n");
     }
+
 }
 
 int main() {
@@ -45,9 +58,9 @@ int main() {
         int n = recvfrom(sockfd, buffer, sizeof(buffer) - 1, 0, (struct sockaddr *)&cliaddr, &len);
         if (n > 0) {
             buffer[n] = '\0';
-            __AFL_COVERAGE_ON();
+            //__AFL_COVERAGE_ON();
             process_input(buffer);
-            __AFL_COVERAGE_OFF();
+            //__AFL_COVERAGE_OFF();
         }
     }
 
